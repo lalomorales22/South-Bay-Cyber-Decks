@@ -1,0 +1,286 @@
+{
+  "units": "metres, Y-up",
+  "count": 35,
+  "models": [
+    {
+      "id": "case-vintage",
+      "category": "case",
+      "name": "Vintage Terminal case shell",
+      "file": "assets/models/cases/case-vintage.glb",
+      "bytes": 4912,
+      "meshes": 6
+    },
+    {
+      "id": "case-sleek",
+      "category": "case",
+      "name": "Sleek case shell",
+      "file": "assets/models/cases/case-sleek.glb",
+      "bytes": 4920,
+      "meshes": 6
+    },
+    {
+      "id": "case-tactical",
+      "category": "case",
+      "name": "Tactical / Field case shell",
+      "file": "assets/models/cases/case-tactical.glb",
+      "bytes": 8024,
+      "meshes": 11
+    },
+    {
+      "id": "case-hidden",
+      "category": "case",
+      "name": "Hidden / Stealth case shell",
+      "file": "assets/models/cases/case-hidden.glb",
+      "bytes": 6368,
+      "meshes": 8
+    },
+    {
+      "id": "case-exposed",
+      "category": "case",
+      "name": "Exposed / Cyberpunk case shell",
+      "file": "assets/models/cases/case-exposed.glb",
+      "bytes": 10692,
+      "meshes": 10
+    },
+    {
+      "id": "case-luggable",
+      "category": "case",
+      "name": "Luggable case shell",
+      "file": "assets/models/cases/case-luggable.glb",
+      "bytes": 6896,
+      "meshes": 9
+    },
+    {
+      "id": "keyboard-sb-40",
+      "category": "keyboard",
+      "name": "SB-40 keyboard PCB + keys (no touchpad)",
+      "file": "assets/models/keyboards/keyboard-sb-40.glb",
+      "bytes": 23844,
+      "meshes": 41
+    },
+    {
+      "id": "keyboard-sb-50",
+      "category": "keyboard",
+      "name": "SB-50 keyboard PCB + keys (no touchpad)",
+      "file": "assets/models/keyboards/keyboard-sb-50.glb",
+      "bytes": 29396,
+      "meshes": 51
+    },
+    {
+      "id": "keyboard-sb-60",
+      "category": "keyboard",
+      "name": "SB-60 keyboard PCB + keys (no touchpad)",
+      "file": "assets/models/keyboards/keyboard-sb-60.glb",
+      "bytes": 35516,
+      "meshes": 62
+    },
+    {
+      "id": "keyboard-sb-65",
+      "category": "keyboard",
+      "name": "SB-65 keyboard PCB + keys (no touchpad)",
+      "file": "assets/models/keyboards/keyboard-sb-65.glb",
+      "bytes": 39392,
+      "meshes": 69
+    },
+    {
+      "id": "keyboard-sb-75",
+      "category": "keyboard",
+      "name": "SB-75 keyboard PCB + keys (no touchpad)",
+      "file": "assets/models/keyboards/keyboard-sb-75.glb",
+      "bytes": 44384,
+      "meshes": 78
+    },
+    {
+      "id": "keyboard-sb-ortho48",
+      "category": "keyboard",
+      "name": "SB-Ortho48 keyboard PCB + keys (no touchpad)",
+      "file": "assets/models/keyboards/keyboard-sb-ortho48.glb",
+      "bytes": 28292,
+      "meshes": 49
+    },
+    {
+      "id": "keyboard-sb-split36",
+      "category": "keyboard",
+      "name": "SB-Split36 keyboard PCB + keys (no touchpad)",
+      "file": "assets/models/keyboards/keyboard-sb-split36.glb",
+      "bytes": 22204,
+      "meshes": 38
+    },
+    {
+      "id": "keyboard-sb-type",
+      "category": "keyboard",
+      "name": "SB-Type keyboard PCB + keys (no touchpad)",
+      "file": "assets/models/keyboards/keyboard-sb-type.glb",
+      "bytes": 33844,
+      "meshes": 59
+    },
+    {
+      "id": "keyboard-sb-track",
+      "category": "keyboard",
+      "name": "SB-Track keyboard PCB + keys (no touchpad)",
+      "file": "assets/models/keyboards/keyboard-sb-track.glb",
+      "bytes": 35516,
+      "meshes": 62
+    },
+    {
+      "id": "keyboard-sb-macro",
+      "category": "keyboard",
+      "name": "SB-Macro keyboard PCB + keys (no touchpad)",
+      "file": "assets/models/keyboards/keyboard-sb-macro.glb",
+      "bytes": 38840,
+      "meshes": 68
+    },
+    {
+      "id": "display-7in",
+      "category": "display",
+      "name": "7\u2033 display",
+      "file": "assets/models/displays/display-7in.glb",
+      "bytes": 1992,
+      "meshes": 2
+    },
+    {
+      "id": "display-10in",
+      "category": "display",
+      "name": "10\u2033 display",
+      "file": "assets/models/displays/display-10in.glb",
+      "bytes": 1980,
+      "meshes": 2
+    },
+    {
+      "id": "display-13in",
+      "category": "display",
+      "name": "13\u2033 display",
+      "file": "assets/models/displays/display-13in.glb",
+      "bytes": 1976,
+      "meshes": 2
+    },
+    {
+      "id": "touchpad-side",
+      "category": "touchpad",
+      "name": "Side touchpad bay",
+      "file": "assets/models/touchpads/touchpad-side.glb",
+      "bytes": 1256,
+      "meshes": 1
+    },
+    {
+      "id": "touchpad-center",
+      "category": "touchpad",
+      "name": "Center touchpad",
+      "file": "assets/models/touchpads/touchpad-center.glb",
+      "bytes": 1256,
+      "meshes": 1
+    },
+    {
+      "id": "touchpad-trackball",
+      "category": "touchpad",
+      "name": "Trackball",
+      "file": "assets/models/touchpads/touchpad-trackball.glb",
+      "bytes": 6792,
+      "meshes": 1
+    },
+    {
+      "id": "touchpad-stick",
+      "category": "touchpad",
+      "name": "Pointing stick",
+      "file": "assets/models/touchpads/touchpad-stick.glb",
+      "bytes": 2792,
+      "meshes": 1
+    },
+    {
+      "id": "accessory-esp32lcd",
+      "category": "accessory",
+      "name": "ESP32 + LCD status module",
+      "file": "assets/models/accessories/accessory-esp32lcd.glb",
+      "bytes": 1964,
+      "meshes": 2
+    },
+    {
+      "id": "accessory-esp32second",
+      "category": "accessory",
+      "name": "Second ESP32 coprocessor",
+      "file": "assets/models/accessories/accessory-esp32second.glb",
+      "bytes": 1232,
+      "meshes": 1
+    },
+    {
+      "id": "accessory-lora",
+      "category": "accessory",
+      "name": "LoRa antenna",
+      "file": "assets/models/accessories/accessory-lora.glb",
+      "bytes": 9312,
+      "meshes": 2
+    },
+    {
+      "id": "accessory-wifi",
+      "category": "accessory",
+      "name": "High-gain Wi-Fi antenna",
+      "file": "assets/models/accessories/accessory-wifi.glb",
+      "bytes": 9324,
+      "meshes": 2
+    },
+    {
+      "id": "accessory-gps",
+      "category": "accessory",
+      "name": "GPS module + antenna",
+      "file": "assets/models/accessories/accessory-gps.glb",
+      "bytes": 2740,
+      "meshes": 1
+    },
+    {
+      "id": "accessory-sdr",
+      "category": "accessory",
+      "name": "SDR receiver",
+      "file": "assets/models/accessories/accessory-sdr.glb",
+      "bytes": 1208,
+      "meshes": 1
+    },
+    {
+      "id": "accessory-seconddisplay",
+      "category": "accessory",
+      "name": "Second small display",
+      "file": "assets/models/accessories/accessory-seconddisplay.glb",
+      "bytes": 1980,
+      "meshes": 2
+    },
+    {
+      "id": "accessory-solar",
+      "category": "accessory",
+      "name": "Solar input panel",
+      "file": "assets/models/accessories/accessory-solar.glb",
+      "bytes": 1248,
+      "meshes": 1
+    },
+    {
+      "id": "accessory-engrave",
+      "category": "accessory",
+      "name": "Engraving plate",
+      "file": "assets/models/accessories/accessory-engrave.glb",
+      "bytes": 1244,
+      "meshes": 1
+    },
+    {
+      "id": "build-vintage-writer",
+      "category": "build",
+      "name": "Vintage Writer \u2014 complete deck",
+      "file": "assets/models/builds/build-vintage-writer.glb",
+      "bytes": 80532,
+      "meshes": 71
+    },
+    {
+      "id": "build-field-operator",
+      "category": "build",
+      "name": "Field Operator \u2014 complete deck",
+      "file": "assets/models/builds/build-field-operator.glb",
+      "bytes": 63564,
+      "meshes": 89
+    },
+    {
+      "id": "build-stealth-book",
+      "category": "build",
+      "name": "Stealth Book \u2014 complete deck",
+      "file": "assets/models/builds/build-stealth-book.glb",
+      "bytes": 32676,
+      "meshes": 53
+    }
+  ]
+}

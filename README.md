@@ -16,10 +16,21 @@ GitHub Pages on `main` (root) and share the Pages URL.
 no-dependency landing page + configurator v2 (case gallery with filters,
 Pi vs Orin comparison, live deck + keyboard schematic previews, price
 breakdown, example builds, FAQ, and a PHP lead form that re-prices
-server-side). Run it with PHP: `php -S localhost:8000 -t landing` then
-open http://localhost:8000/index.php. Note: GitHub Pages does not execute
-PHP, so the lead form's server validation needs a PHP host — the JS
-configurator in `index.html` remains the Pages version.
+server-side). Run it from the repo root with PHP:
+`php -S localhost:8000` then open http://localhost:8000/landing/index.php
+(serve from the root, not `-t landing`, so `../assets/models/` resolves).
+Note: GitHub Pages does not execute PHP, so the lead form's server
+validation needs a PHP host — the JS configurator in `index.html`
+remains the Pages version.
+
+🎲 **3D assets:** `assets/models/` — 35 real GLB files: 6 cases, 10
+keyboards, 3 displays, 4 touchpads, 9 accessories, 3 complete example
+builds, plus `manifest.json`. Regenerate with
+`python3 tools/build-3d-assets.py`. The builder's 3D deck is live
+Three.js (orbit, auto-rotate, exploded view, top view) and rebuilds as
+you change case, keyboard, display, and accessories — with PBR materials,
+soft shadows, a live terminal screen texture, and canvas textures for
+the ESP32 LCD and solar panel. See `assets/models/README.md`.
 
 > Prices on this site are **starting estimates** for planning, not final
 > quotes. Final price depends on display, battery, machining, and keyboard
