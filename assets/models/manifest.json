@@ -1,6 +1,6 @@
 {
   "units": "metres, Y-up",
-  "count": 35,
+  "count": 37,
   "models": [
     {
       "id": "case-vintage",
@@ -131,17 +131,25 @@
       "meshes": 68
     },
     {
+      "id": "display-4in",
+      "category": "display",
+      "name": "4\u2033 display (16:9, true diagonal size)",
+      "file": "assets/models/displays/display-4in.glb",
+      "bytes": 1984,
+      "meshes": 2
+    },
+    {
       "id": "display-7in",
       "category": "display",
-      "name": "7\u2033 display",
+      "name": "7\u2033 display (16:9, true diagonal size)",
       "file": "assets/models/displays/display-7in.glb",
-      "bytes": 1992,
+      "bytes": 2000,
       "meshes": 2
     },
     {
       "id": "display-10in",
       "category": "display",
-      "name": "10\u2033 display",
+      "name": "10\u2033 display (16:9, true diagonal size)",
       "file": "assets/models/displays/display-10in.glb",
       "bytes": 1980,
       "meshes": 2
@@ -149,9 +157,9 @@
     {
       "id": "display-13in",
       "category": "display",
-      "name": "13\u2033 display",
+      "name": "13\u2033 display (16:9, true diagonal size)",
       "file": "assets/models/displays/display-13in.glb",
-      "bytes": 1976,
+      "bytes": 1984,
       "meshes": 2
     },
     {
@@ -271,7 +279,7 @@
       "category": "build",
       "name": "Field Operator \u2014 complete deck",
       "file": "assets/models/builds/build-field-operator.glb",
-      "bytes": 63564,
+      "bytes": 63568,
       "meshes": 89
     },
     {
@@ -279,8 +287,16 @@
       "category": "build",
       "name": "Stealth Book \u2014 complete deck",
       "file": "assets/models/builds/build-stealth-book.glb",
-      "bytes": 32676,
+      "bytes": 32684,
       "meshes": 53
+    },
+    {
+      "id": "build-pocket-four",
+      "category": "build",
+      "name": "Pocket Four \u2014 complete deck",
+      "file": "assets/models/builds/build-pocket-four.glb",
+      "bytes": 31208,
+      "meshes": 51
     }
   ]
 }

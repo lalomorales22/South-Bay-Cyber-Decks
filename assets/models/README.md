@@ -7,12 +7,12 @@ Real GLB files for every piece and every example build — not screenshots.
 - `cases/` — 6 case shells: vintage, sleek, tactical, hidden, exposed, luggable
 - `keyboards/` — 10 keyboard PCBs with keys: SB-40, SB-50, SB-60, SB-65,
   SB-75, SB-Ortho48, SB-Split36, SB-Type, SB-Track, SB-Macro
-- `displays/` — 7″, 10″, 13″ displays
+- `displays/` — 4″, 7″, 10″, 13″ displays (true 16:9 sizes)
 - `touchpads/` — side, center, trackball, pointing stick
 - `accessories/` — ESP32+LCD, second ESP32, LoRa antenna, Wi-Fi antenna,
   GPS, SDR, second display, solar panel, engraving plate
-- `builds/` — 3 complete decks: vintage-writer, field-operator, stealth-book
-- `manifest.json` — machine-readable list of all 35 files (bytes, meshes)
+- `builds/` — 4 complete decks: vintage-writer, field-operator, stealth-book, pocket-four (4″ compact)
+- `manifest.json` — machine-readable list of all 37 files (bytes, meshes)
 
 Units: metres, Y-up. A deck base is ~0.32–0.36 m wide, keys are on a
 19.05 mm pitch, matching the configurator.
@@ -34,7 +34,7 @@ Units: metres, Y-up. A deck base is ~0.32–0.36 m wide, keys are on a
 
 `python3 tools/build-3d-assets.py`
 
-That rebuilds all 35 GLBs + `manifest.json` from one script, so the
+That rebuilds all 37 GLBs + `manifest.json` from one script, so the
 assets, the manifest, and the live Three.js visualizer stay in sync on
 dimensions. Edit the script, not the GLBs by hand.
 

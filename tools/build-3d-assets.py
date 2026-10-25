@@ -66,10 +66,11 @@ BOARDS = {
     "SB-Split36": [12, 12, 12], "SB-Type": [13, 13, 12, 11, 9], "SB-Track": [14, 14, 13, 12, 8],
     "SB-Macro": [15, 15, 14, 13, 10],
 }
-DISPLAYS = {"7": (0.19, 0.12), "10": (0.26, 0.16), "13": (0.32, 0.20)}
+# True 16:9 sizes from diagonal: w = diag * 16/sqrt(16^2+9^2), h = diag * 9/sqrt(...)
+DISPLAYS = {"4": (0.089, 0.050), "7": (0.155, 0.087), "10": (0.221, 0.124), "13": (0.288, 0.162)}
 
-def case_meshes(family, standalone=False):
-    c = CASES[family]; W, D = c["w"], c["d"]; out = []
+def case_meshes(family, standalone=False, w=None, d=None):
+    c = CASES[family]; W, D = (w or c["w"]), (d or c["d"]); out = []
     if family == "exposed":
         out.append(box(W, 0.012, D, "#22262b", 0.7, 0.45, (0, 0.006, 0), "frame"))
         for sx in (-1, 1):
@@ -154,11 +155,11 @@ def key_mesh(x, y, z, caps, colour):
 def display_meshes(size, hinge=(0, 0.02, -0.11), standalone=False):
     w, h = DISPLAYS[size]; out = []
     if standalone:
-        out.append(box(w + 0.02, h + 0.02, 0.012, "#111111", 0.4, 0.4, (0, 0, 0), "bezel"))
+        out.append(box(w + 0.016, h + 0.016, 0.012, "#111111", 0.4, 0.4, (0, 0, 0), "bezel"))
         out.append(box(w, h, 0.002, "#0a1f16", 0.0, 0.3, (0, 0, 0.007), "screen"))
         return out
-    bez = box(w + 0.02, h + 0.02, 0.012, "#111111", 0.4, 0.4, (0, (h + 0.02) / 2, 0), "bezel")
-    scr = box(w, h, 0.002, "#0a2a1c", 0.0, 0.25, (0, (h + 0.02) / 2, 0.007), "screen")
+    bez = box(w + 0.016, h + 0.016, 0.012, "#111111", 0.4, 0.4, (0, (h + 0.016) / 2, 0), "bezel")
+    scr = box(w, h, 0.002, "#0a2a1c", 0.0, 0.25, (0, (h + 0.016) / 2, 0.007), "screen")
     out.append(lid_transform(bez, hinge)); out.append(lid_transform(scr, hinge))
     return out
 
@@ -187,8 +188,15 @@ def accessory_meshes(aid, deck_pos=None):
     return []
 
 def assemble(cfg):
-    fam = cfg["case"]; case = CASES[fam]; W, D = case["w"], case["d"]
-    meshes = case_meshes(fam)
+    fam = cfg["case"]; case = CASES[fam]
+    if cfg.get("display") == "4":
+        # Compact deck: shrink the case to fit the small board + 4" screen,
+        # instead of keeping a full-size family shell around a tiny deck.
+        _rows = BOARDS[cfg["board"]]; _kw = max(_rows) * 0.019 + 0.012; _kd = len(_rows) * 0.019 + 0.012
+        W = max(_kw + 0.04, DISPLAYS["4"][0] + 0.05, 0.20); D = max(_kd + 0.08, 0.18)
+    else:
+        W, D = case["w"], case["d"]
+    meshes = case_meshes(fam, w=W, d=D)
     hinge = (0, 0.02, -D / 2)
     if cfg["display"] != "none":
         meshes += display_meshes(cfg["display"], hinge)
@@ -226,7 +234,7 @@ for board in BOARDS:
                          **save(keyboard_meshes(board, "chunky", "none", pos=(0, 0, 0), standalone=True)[0],
                                 f"keyboards/keyboard-{board.lower()}.glb")})
 for size in DISPLAYS:
-    manifest.append({"id": f"display-{size}in", "category": "display", "name": f"{size}″ display",
+    manifest.append({"id": f"display-{size}in", "category": "display", "name": f"{size}″ display (16:9, true diagonal size)",
                      **save(display_meshes(size, standalone=True), f"displays/display-{size}in.glb")})
 for tp, label in [("side", "Side touchpad bay"), ("center", "Center touchpad"),
                   ("trackball", "Trackball"), ("stick", "Pointing stick")]:
@@ -257,6 +265,9 @@ BUILDS = {
     "stealth-book": dict(compute="pi5", display="7", battery="standard", case="hidden",
                          form="book", board="SB-40", touchpad="none", keycaps="low",
                          accessories=["esp32lcd"]),
+    "pocket-four": dict(compute="pi5", display="4", battery="standard", case="sleek",
+                        form="foldable", board="SB-40", touchpad="none", keycaps="low",
+                        accessories=["esp32lcd"]),
 }
 for slug, cfg in BUILDS.items():
     manifest.append({"id": f"build-{slug}", "category": "build", "name": slug.replace("-", " ").title() + " — complete deck",

@@ -66,7 +66,7 @@ model-viewer{width:100%;height:420px;background:#0a120e;border:1px solid var(--l
 <label class="opt"><input type="radio" name="compute" value="pi5" checked><span><b>Raspberry Pi 5 — 8 GB</b><small>Best value, huge software support. Radio, SDR, coding, retro. +$0 (base)</small></span></label>
 <label class="opt"><input type="radio" name="compute" value="orin"><span><b>Jetson Orin Nano Super — 8 GB</b><small>On-device AI + CUDA + vision. For AI work the Pi can't touch. +$250</small></span></label>
 <label class="opt"><input type="radio" name="compute" value="byo"><span><b>Bring your own board</b><small>You ship it, we design around it. −$80 (no board supplied)</small></span></label>
-<label class="sel"><span>Display</span><select id="display"><option value="7">7″ touchscreen — +$90</option><option value="10" selected>10″ IPS — +$140</option><option value="13">13″ IPS — +$210</option><option value="none">No display (headless / you supply) — +$0</option></select></label>
+<label class="sel"><span>Display</span><select id="display"><option value="4">4″ touchscreen — small decks — +$55</option><option value="7">7″ touchscreen — +$90</option><option value="10" selected>10″ IPS — +$140</option><option value="13">13″ IPS — +$210</option><option value="none">No display (headless / you supply) — +$0</option></select></label>
 </fieldset>
 
 <fieldset><legend>2 · Case + form</legend>
@@ -232,7 +232,7 @@ model-viewer{width:100%;height:420px;background:#0a120e;border:1px solid var(--l
 <footer>South Bay Cyber Decks · A South Bay IT Solutions project · Estimates only — final quote confirmed before build · Keyboard PCB platform specs: see <kbd>keyboards/</kbd> in this repo.</footer>
 <script>
 const computePrices={pi5:0,orin:250,byo:-80};
-const displayPrices={"7":90,"10":140,"13":210,"none":0};
+const displayPrices={"4":55,"7":90,"10":140,"13":210,"none":0};
 const casePrices={vintage:220,sleek:260,tactical:340,hidden:300,exposed:280,luggable:320};
 const formPrices={foldable:60,slab:0,typewriter:80,luggable:70,split:40,book:50};
 const boardPrices={"SB-40":140,"SB-50":150,"SB-60":160,"SB-65":175,"SB-75":195,"SB-Ortho48":155,"SB-Split36":180,"SB-Type":190,"SB-Track":210,"SB-Macro":200};

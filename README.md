@@ -23,8 +23,8 @@ Note: GitHub Pages does not execute PHP, so the lead form's server
 validation needs a PHP host — the JS configurator in `index.html`
 remains the Pages version.
 
-🎲 **3D assets:** `assets/models/` — 35 real GLB files: 6 cases, 10
-keyboards, 3 displays, 4 touchpads, 9 accessories, 3 complete example
+🎲 **3D assets:** `assets/models/` — 37 real GLB files: 6 cases, 10
+keyboards, 4 displays (including new 4″), 4 touchpads, 9 accessories, 4 complete example
 builds, plus `manifest.json`. Regenerate with
 `python3 tools/build-3d-assets.py`. The builder's 3D deck is live
 Three.js (orbit, auto-rotate, exploded view, top view) and rebuilds as
