@@ -12,6 +12,15 @@ deck, by hand, around you.
 🌐 **Live site / configurator:** open `index.html` in this repo, or enable
 GitHub Pages on `main` (root) and share the Pages URL.
 
+🚀 **Production landing page:** `landing/index.php` — a single-file,
+no-dependency landing page + configurator v2 (case gallery with filters,
+Pi vs Orin comparison, live deck + keyboard schematic previews, price
+breakdown, example builds, FAQ, and a PHP lead form that re-prices
+server-side). Run it with PHP: `php -S localhost:8000 -t landing` then
+open http://localhost:8000/index.php. Note: GitHub Pages does not execute
+PHP, so the lead form's server validation needs a PHP host — the JS
+configurator in `index.html` remains the Pages version.
+
 > Prices on this site are **starting estimates** for planning, not final
 > quotes. Final price depends on display, battery, machining, and keyboard
 > options. Every build gets a confirmed quote before we cut anything.
