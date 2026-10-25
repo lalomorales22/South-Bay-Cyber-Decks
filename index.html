@@ -27,7 +27,11 @@ pre{white-space:pre-wrap;word-break:break-word;background:#07100c;border:1px sol
 .note{color:var(--muted);font-size:.9rem}kbd{font-family:ui-monospace,monospace;background:#1e2f26;padding:2px 6px;border-radius:4px}
 footer{max-width:1100px;margin:0 auto;padding:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
 .kb-note{border-left:3px solid var(--amber);padding-left:12px;color:var(--muted)}
+model-viewer{width:100%;height:420px;background:#0a120e;border:1px solid var(--line);border-radius:14px}
+.asset-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.asset-card{cursor:pointer}.asset-card:hover{border-color:var(--green)}.asset-card.on{border-color:var(--green)}
 </style>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 </head>
 <body>
 <header>
@@ -133,6 +137,97 @@ footer{max-width:1100px;margin:0 auto;padding:20px;border-top:1px solid var(--li
 <div class="card"><h3>3. We build it</h3><p>Case, custom keyboard PCB, wiring, test, burn-in. You get photos along the way.</p></div>
 <div class="card"><h3>4. It ships</h3><p>With its build sheet and keyboard map, so you (or we) can repair and mod it later.</p></div>
 </div>
+
+<h2 style="margin-top:32px">3D model gallery — orbit every part</h2>
+<p class="note">Every case, keyboard, display, touchpad, accessory, and complete build in real 3D — drag to orbit, scroll to zoom. Pick from the list or click any card below. All 35 GLB files live in the repo under <kbd>assets/models/</kbd> (metres, Y-up) and open in Blender and any GLTF viewer. Dimension-accurate schematics, not fabrication CAD — exact screw positions and wiring come from the PCB app export and build sheet.</p>
+<label class="sel"><span>Inspect a single asset</span><select id="assetSelect">
+<optgroup label="Complete builds">
+<option value="assets/models/builds/build-vintage-writer.glb" selected>Build — Vintage Writer — complete deck (78.6 KB)</option>
+<option value="assets/models/builds/build-field-operator.glb">Build — Field Operator — complete deck (62.1 KB)</option>
+<option value="assets/models/builds/build-stealth-book.glb">Build — Stealth Book — complete deck (31.9 KB)</option>
+</optgroup>
+<optgroup label="Cases">
+<option value="assets/models/cases/case-vintage.glb">Case — Vintage Terminal case shell (4.8 KB)</option>
+<option value="assets/models/cases/case-sleek.glb">Case — Sleek case shell (4.8 KB)</option>
+<option value="assets/models/cases/case-tactical.glb">Case — Tactical / Field case shell (7.8 KB)</option>
+<option value="assets/models/cases/case-hidden.glb">Case — Hidden / Stealth case shell (6.2 KB)</option>
+<option value="assets/models/cases/case-exposed.glb">Case — Exposed / Cyberpunk case shell (10.4 KB)</option>
+<option value="assets/models/cases/case-luggable.glb">Case — Luggable case shell (6.7 KB)</option>
+</optgroup>
+<optgroup label="Keyboards">
+<option value="assets/models/keyboards/keyboard-sb-40.glb">Keyboard — SB-40 PCB + keys (23.3 KB)</option>
+<option value="assets/models/keyboards/keyboard-sb-50.glb">Keyboard — SB-50 PCB + keys (28.7 KB)</option>
+<option value="assets/models/keyboards/keyboard-sb-60.glb">Keyboard — SB-60 PCB + keys (34.7 KB)</option>
+<option value="assets/models/keyboards/keyboard-sb-65.glb">Keyboard — SB-65 PCB + keys (38.5 KB)</option>
+<option value="assets/models/keyboards/keyboard-sb-75.glb">Keyboard — SB-75 PCB + keys (43.4 KB)</option>
+<option value="assets/models/keyboards/keyboard-sb-ortho48.glb">Keyboard — SB-Ortho48 PCB + keys (27.6 KB)</option>
+<option value="assets/models/keyboards/keyboard-sb-split36.glb">Keyboard — SB-Split36 PCB + keys (21.7 KB)</option>
+<option value="assets/models/keyboards/keyboard-sb-type.glb">Keyboard — SB-Type PCB + keys (33.0 KB)</option>
+<option value="assets/models/keyboards/keyboard-sb-track.glb">Keyboard — SB-Track PCB + keys (34.7 KB)</option>
+<option value="assets/models/keyboards/keyboard-sb-macro.glb">Keyboard — SB-Macro PCB + keys (37.9 KB)</option>
+</optgroup>
+<optgroup label="Displays">
+<option value="assets/models/displays/display-7in.glb">Display — 7″ display (1.9 KB)</option>
+<option value="assets/models/displays/display-10in.glb">Display — 10″ display (1.9 KB)</option>
+<option value="assets/models/displays/display-13in.glb">Display — 13″ display (1.9 KB)</option>
+</optgroup>
+<optgroup label="Touchpads">
+<option value="assets/models/touchpads/touchpad-side.glb">Touchpad — Side touchpad bay (1.2 KB)</option>
+<option value="assets/models/touchpads/touchpad-center.glb">Touchpad — Center touchpad (1.2 KB)</option>
+<option value="assets/models/touchpads/touchpad-trackball.glb">Touchpad — Trackball (6.6 KB)</option>
+<option value="assets/models/touchpads/touchpad-stick.glb">Touchpad — Pointing stick (2.7 KB)</option>
+</optgroup>
+<optgroup label="Accessories">
+<option value="assets/models/accessories/accessory-esp32lcd.glb">Accessory — ESP32 + LCD status module (1.9 KB)</option>
+<option value="assets/models/accessories/accessory-esp32second.glb">Accessory — Second ESP32 coprocessor (1.2 KB)</option>
+<option value="assets/models/accessories/accessory-lora.glb">Accessory — LoRa antenna (9.1 KB)</option>
+<option value="assets/models/accessories/accessory-wifi.glb">Accessory — High-gain Wi-Fi antenna (9.1 KB)</option>
+<option value="assets/models/accessories/accessory-gps.glb">Accessory — GPS module + antenna (2.7 KB)</option>
+<option value="assets/models/accessories/accessory-sdr.glb">Accessory — SDR receiver (1.2 KB)</option>
+<option value="assets/models/accessories/accessory-seconddisplay.glb">Accessory — Second small display (1.9 KB)</option>
+<option value="assets/models/accessories/accessory-solar.glb">Accessory — Solar input panel (1.2 KB)</option>
+<option value="assets/models/accessories/accessory-engrave.glb">Accessory — Engraving plate (1.2 KB)</option>
+</optgroup>
+</select></label>
+<model-viewer id="assetViewer" src="assets/models/builds/build-vintage-writer.glb" camera-controls auto-rotate shadow-intensity="1" alt="3D model of a South Bay cyberdeck build"></model-viewer>
+<p class="note">Drag to orbit · Scroll to zoom · Right-drag to pan. <a id="assetDownload" href="assets/models/builds/build-vintage-writer.glb" download>Download this GLB</a></p>
+<div class="asset-grid" id="assetGrid">
+<div class="card asset-card on" data-src="assets/models/builds/build-vintage-writer.glb"><b>Vintage Writer — complete deck</b><p>Build · 78.6 KB · 71 meshes<br><a href="assets/models/builds/build-vintage-writer.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/builds/build-field-operator.glb"><b>Field Operator — complete deck</b><p>Build · 62.1 KB · 89 meshes<br><a href="assets/models/builds/build-field-operator.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/builds/build-stealth-book.glb"><b>Stealth Book — complete deck</b><p>Build · 31.9 KB · 53 meshes<br><a href="assets/models/builds/build-stealth-book.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/cases/case-vintage.glb"><b>Vintage Terminal case shell</b><p>Case · 4.8 KB · 6 meshes<br><a href="assets/models/cases/case-vintage.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/cases/case-sleek.glb"><b>Sleek case shell</b><p>Case · 4.8 KB · 6 meshes<br><a href="assets/models/cases/case-sleek.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/cases/case-tactical.glb"><b>Tactical / Field case shell</b><p>Case · 7.8 KB · 11 meshes<br><a href="assets/models/cases/case-tactical.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/cases/case-hidden.glb"><b>Hidden / Stealth case shell</b><p>Case · 6.2 KB · 8 meshes<br><a href="assets/models/cases/case-hidden.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/cases/case-exposed.glb"><b>Exposed / Cyberpunk case shell</b><p>Case · 10.4 KB · 10 meshes<br><a href="assets/models/cases/case-exposed.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/cases/case-luggable.glb"><b>Luggable case shell</b><p>Case · 6.7 KB · 9 meshes<br><a href="assets/models/cases/case-luggable.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/keyboards/keyboard-sb-40.glb"><b>SB-40 keyboard PCB + keys</b><p>Keyboard · 23.3 KB · 41 meshes<br><a href="assets/models/keyboards/keyboard-sb-40.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/keyboards/keyboard-sb-50.glb"><b>SB-50 keyboard PCB + keys</b><p>Keyboard · 28.7 KB · 51 meshes<br><a href="assets/models/keyboards/keyboard-sb-50.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/keyboards/keyboard-sb-60.glb"><b>SB-60 keyboard PCB + keys</b><p>Keyboard · 34.7 KB · 62 meshes<br><a href="assets/models/keyboards/keyboard-sb-60.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/keyboards/keyboard-sb-65.glb"><b>SB-65 keyboard PCB + keys</b><p>Keyboard · 38.5 KB · 69 meshes<br><a href="assets/models/keyboards/keyboard-sb-65.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/keyboards/keyboard-sb-75.glb"><b>SB-75 keyboard PCB + keys</b><p>Keyboard · 43.4 KB · 78 meshes<br><a href="assets/models/keyboards/keyboard-sb-75.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/keyboards/keyboard-sb-ortho48.glb"><b>SB-Ortho48 keyboard PCB + keys</b><p>Keyboard · 27.6 KB · 49 meshes<br><a href="assets/models/keyboards/keyboard-sb-ortho48.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/keyboards/keyboard-sb-split36.glb"><b>SB-Split36 keyboard PCB + keys</b><p>Keyboard · 21.7 KB · 38 meshes<br><a href="assets/models/keyboards/keyboard-sb-split36.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/keyboards/keyboard-sb-type.glb"><b>SB-Type keyboard PCB + keys</b><p>Keyboard · 33.0 KB · 59 meshes<br><a href="assets/models/keyboards/keyboard-sb-type.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/keyboards/keyboard-sb-track.glb"><b>SB-Track keyboard PCB + keys</b><p>Keyboard · 34.7 KB · 62 meshes<br><a href="assets/models/keyboards/keyboard-sb-track.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/keyboards/keyboard-sb-macro.glb"><b>SB-Macro keyboard PCB + keys</b><p>Keyboard · 37.9 KB · 68 meshes<br><a href="assets/models/keyboards/keyboard-sb-macro.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/displays/display-7in.glb"><b>7″ display</b><p>Display · 1.9 KB · 2 meshes<br><a href="assets/models/displays/display-7in.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/displays/display-10in.glb"><b>10″ display</b><p>Display · 1.9 KB · 2 meshes<br><a href="assets/models/displays/display-10in.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/displays/display-13in.glb"><b>13″ display</b><p>Display · 1.9 KB · 2 meshes<br><a href="assets/models/displays/display-13in.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/touchpads/touchpad-side.glb"><b>Side touchpad bay</b><p>Touchpad · 1.2 KB · 1 mesh<br><a href="assets/models/touchpads/touchpad-side.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/touchpads/touchpad-center.glb"><b>Center touchpad</b><p>Touchpad · 1.2 KB · 1 mesh<br><a href="assets/models/touchpads/touchpad-center.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/touchpads/touchpad-trackball.glb"><b>Trackball</b><p>Touchpad · 6.6 KB · 1 mesh<br><a href="assets/models/touchpads/touchpad-trackball.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/touchpads/touchpad-stick.glb"><b>Pointing stick</b><p>Touchpad · 2.7 KB · 1 mesh<br><a href="assets/models/touchpads/touchpad-stick.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/accessories/accessory-esp32lcd.glb"><b>ESP32 + LCD status module</b><p>Accessory · 1.9 KB · 2 meshes<br><a href="assets/models/accessories/accessory-esp32lcd.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/accessories/accessory-esp32second.glb"><b>Second ESP32 coprocessor</b><p>Accessory · 1.2 KB · 1 mesh<br><a href="assets/models/accessories/accessory-esp32second.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/accessories/accessory-lora.glb"><b>LoRa antenna</b><p>Accessory · 9.1 KB · 2 meshes<br><a href="assets/models/accessories/accessory-lora.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/accessories/accessory-wifi.glb"><b>High-gain Wi-Fi antenna</b><p>Accessory · 9.1 KB · 2 meshes<br><a href="assets/models/accessories/accessory-wifi.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/accessories/accessory-gps.glb"><b>GPS module + antenna</b><p>Accessory · 2.7 KB · 1 mesh<br><a href="assets/models/accessories/accessory-gps.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/accessories/accessory-sdr.glb"><b>SDR receiver</b><p>Accessory · 1.2 KB · 1 mesh<br><a href="assets/models/accessories/accessory-sdr.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/accessories/accessory-seconddisplay.glb"><b>Second small display</b><p>Accessory · 1.9 KB · 2 meshes<br><a href="assets/models/accessories/accessory-seconddisplay.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/accessories/accessory-solar.glb"><b>Solar input panel</b><p>Accessory · 1.2 KB · 1 mesh<br><a href="assets/models/accessories/accessory-solar.glb" download>Download GLB ↓</a></p></div>
+<div class="card asset-card" data-src="assets/models/accessories/accessory-engrave.glb"><b>Engraving plate</b><p>Accessory · 1.2 KB · 1 mesh<br><a href="assets/models/accessories/accessory-engrave.glb" download>Download GLB ↓</a></p></div>
+</div>
 </main>
 <footer>South Bay Cyber Decks · A South Bay IT Solutions project · Estimates only — final quote confirmed before build · Keyboard PCB platform specs: see <kbd>keyboards/</kbd> in this repo.</footer>
 <script>
@@ -159,6 +254,9 @@ function update(){
 document.querySelectorAll('input,select').forEach(e=>e.addEventListener('change',update));update();
 document.getElementById('copyBtn').onclick=async()=>{const b=update();const t=document.getElementById('summaryLines').innerText+'\nEstimate: $'+b.estimate_usd+'*\n\n'+JSON.stringify(b,null,2);try{await navigator.clipboard.writeText(t);document.getElementById('copyMsg').textContent='Copied — send it to us to start your build.'}catch(e){document.getElementById('copyMsg').textContent='Copy blocked by browser — select the JSON below manually.'}};
 document.getElementById('dlBtn').onclick=()=>{const b=update();const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(b,null,2)],{type:'application/json'}));a.download='south-bay-cyberdeck-build.json';a.click()};
+</script>
+<script>
+(function(){var s=document.getElementById('assetSelect'),v=document.getElementById('assetViewer'),d=document.getElementById('assetDownload');if(!s||!v)return;function load(src){v.setAttribute('src',src);if(d)d.setAttribute('href',src);document.querySelectorAll('.asset-card').forEach(function(c){c.classList.toggle('on',c.dataset.src===src)});if(s.value!==src)s.value=src;}s.addEventListener('change',function(){load(s.value)});document.querySelectorAll('.asset-card').forEach(function(c){c.addEventListener('click',function(e){if(e.target.tagName==='A')return;load(c.dataset.src);v.scrollIntoView({behavior:'smooth',block:'center'})})});})();
 </script>
 </body>
 </html>
